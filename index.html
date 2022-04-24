@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Word Guess</h1>
+    
+    {% for item in board%}
+        <div>{{item}}</div>
+    {% endfor %}
+    <br>
+    <form id="guess-form" action="/check">
+        <input type="text" name="guess" placeholder="submit a guess" id="guess">
+        <button id="word-guess">SUBMIT ANSWER</button>
+    </form>
+    <br>
+    <h3>Your Word</h3>
+    <p class="res">
+
+    </p>
+    <h3>Accepted Words</h3>
+    <ul class="valid-words">
+
+    </ul>
+    <br>
+    <h3>Score</h3>
+    <p>{{highscore}}</p>
+    <h3>Attempts</h3>
+    <p>{{play_nums}}</p>
+    <h3>Time Remaining</h3>
+    <p id="time-remaining"></p>
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
